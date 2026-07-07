@@ -37,11 +37,26 @@ const projects = [
 ]
 
 const services = [
-  'UX/UI дизайн сайтов',
-  'лендинги и промо-страницы',
-  'посадка дизайна на Tilda',
-  'редизайн',
-  'AI-визуалы',
+  {
+    title: 'Сайт',
+    text: 'Структура, визуальный язык, адаптив и понятный путь пользователя.',
+  },
+  {
+    title: 'Лендинг',
+    text: 'Промо-страница, которая быстро объясняет идею и ведет к действию.',
+  },
+  {
+    title: 'Презентация',
+    text: 'Слайды для продукта, питча, выступления или визуальной упаковки проекта.',
+  },
+  {
+    title: 'Tilda',
+    text: 'Аккуратная посадка дизайна, настройка блоков, анимаций и публикации.',
+  },
+  {
+    title: 'AI-визуалы',
+    text: 'Изображения, обложки и атмосферные материалы под стиль проекта.',
+  },
 ]
 
 export default function Home() {
@@ -65,50 +80,32 @@ export default function Home() {
           transition={{ duration: 0.65, ease }}
         >
           <span className="cell-label">designer / portfolio</span>
-          <h1>KULBEDA</h1>
-          <p>Web & presentation designer</p>
+          <h1>Делаю сайты и презентации.</h1>
+          <p>
+            Я Анастасия Кульбеда, web & presentation designer. Собираю
+            выразительные страницы, лендинги, презентации и AI-визуалы для
+            проектов, которым нужен характер.
+          </p>
+          <div className="hero-actions">
+            <a href="#works">смотреть проекты</a>
+            <a href="#contact">обсудить задачу</a>
+          </div>
         </motion.div>
 
         <motion.div
           className="hero-photo frame-cell"
-          initial={{ opacity: 0, scale: 0.97 }}
+          initial={{ opacity: 0, scale: 0.985 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.08, ease }}
         >
           <Image
             src="/assets/portrait.png"
-            alt="Портрет UX/UI дизайнера Анастасии Кульбеды"
+            alt="Портрет Анастасии Кульбеды"
             fill
             priority
-            sizes="(max-width: 900px) 100vw, 42vw"
+            sizes="(max-width: 900px) 100vw, 54vw"
           />
           <div className="scan-corners" aria-hidden="true" />
-        </motion.div>
-
-        <motion.div
-          className="hero-brief frame-cell"
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.14, ease }}
-        >
-          <span className="cell-label">профиль</span>
-          <h2>Делаю сайты с характером для малого бизнеса, команд и HR.</h2>
-          <p>
-            Проектирую структуру, визуальный язык, промо-страницы, Tilda-сайты,
-            редизайн и AI-визуалы. Мне важно, чтобы интерфейс не выглядел как
-            шаблон, а работал как узнаваемый цифровой плакат.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="hero-orbit frame-cell"
-          aria-hidden="true"
-          initial={{ opacity: 0, rotate: -10 }}
-          animate={{ opacity: 1, rotate: 0 }}
-          transition={{ duration: 0.9, delay: 0.18, ease }}
-        >
-          <div className="orbit-lines" />
-          <span>//2026</span>
         </motion.div>
       </section>
 
@@ -123,7 +120,7 @@ export default function Home() {
         </div>
         <div>
           <span>// фокус</span>
-          <strong>сайты / лендинги / AI-визуалы</strong>
+          <strong>сайты / презентации / AI-визуалы</strong>
         </div>
       </section>
 
@@ -160,31 +157,29 @@ export default function Home() {
       </section>
 
       <section id="services" className="services poster-grid" aria-label="Услуги">
-        <div className="service-copy frame-cell">
+        <div className="services-head frame-cell">
           <span className="cell-label">что можно заказать</span>
-          <h2>от идеи до живой страницы</h2>
+          <h2>форматы работы</h2>
           <p>
-            Я собираю не просто красивый экран, а понятный маршрут: что человек
-            видит первым, как доверяет, куда нажимает и почему запоминает бренд.
+            Не делаю одинаковые карточки “под копирку”. Сначала разбираю задачу,
+            затем собираю структуру, визуальный ритм и понятную точку действия.
           </p>
         </div>
-        <div className="service-list frame-cell">
+        <div className="service-board frame-cell">
           {services.map((service, index) => (
-            <div key={service}>
+            <motion.article
+              key={service.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.04, ease }}
+            >
               <span>{String(index + 1).padStart(2, '0')}</span>
-              <strong>{service}</strong>
-            </div>
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+            </motion.article>
           ))}
         </div>
-      </section>
-
-      <section className="banner-panel frame-cell" aria-label="Бренд-баннер">
-        <Image
-          src="/assets/brand-banner.png"
-          alt="Баннер Kulbeda Web and Presentation Designer"
-          fill
-          sizes="100vw"
-        />
       </section>
 
       <section id="contact" className="contact poster-grid" aria-label="Контакты">
