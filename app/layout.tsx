@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Cool Beta Designer | Anastasia Kulbeda',
+  title: 'KULBEDA | Web & Presentation Designer',
   description:
-    'UX/UI designer for poetic websites, landing pages, Tilda builds, redesigns, and AI visuals.',
+    'Портфолио Анастасии Кульбеды: дизайн сайтов, лендинги, презентации, редизайн и AI-визуалы.',
 }
 
 export default function RootLayout({

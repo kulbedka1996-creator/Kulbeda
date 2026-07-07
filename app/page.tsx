@@ -1,223 +1,203 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
 const projects = [
   {
+    id: '001',
     title: 'OFFtrail',
-    kind: 'Promo landing page',
+    type: 'промо-лендинг',
     year: '2026',
-    noteRu: 'Лендинг как маршрут: немного дикости, четкая структура, ощущение движения до первого клика.',
-    noteEn: 'A landing page as a route: wild enough to feel alive, structured enough to sell.',
-    tags: ['landing', 'storytelling', 'visual concept'],
-    href: 'https://www.behance.net/6bb5c573',
-    mark: 'off / trail',
+    text: 'Маршрутный лендинг для продукта, которому нужно ощущение движения, свободы и точной структуры.',
   },
   {
+    id: '002',
     title: 'Noxi AI',
-    kind: 'Sleep & calm app concept',
+    type: 'app concept',
     year: '2025',
-    noteRu: 'Тихий интерфейс для сна и восстановления: мягкий AI, спокойный UX, без цифрового шума.',
-    noteEn: 'A quiet interface for sleep and recovery: soft AI, calm UX, no digital noise.',
-    tags: ['mobile app', 'ai', 'wellbeing'],
-    href: 'https://www.behance.net/6bb5c573',
-    mark: 'noxi / calm',
+    text: 'Спокойный интерфейс для сна и восстановления: мягкий AI, понятная логика и тихий визуальный язык.',
   },
   {
+    id: '003',
     title: 'STEREO ROOM',
-    kind: 'Online vinyl store',
+    type: 'e-commerce',
     year: '2025',
-    noteRu: 'Магазин винила с настроением комнаты, где пластинки выбирают не по фильтру, а по состоянию.',
-    noteEn: 'A vinyl store with the feeling of a room where records are chosen by mood, not only by filters.',
-    tags: ['ecommerce', 'web ui', 'atmosphere'],
-    href: 'https://www.behance.net/6bb5c573',
-    mark: 'stereo / room',
+    text: 'Онлайн-магазин винила, где пластинки выбираются не только фильтрами, но и состоянием.',
   },
   {
+    id: '004',
     title: 'Tripandplay Theatre',
-    kind: 'Website redesign',
+    type: 'редизайн сайта',
     year: '2026',
-    noteRu: 'Редизайн театрального сайта: афиша, сцена, маршрут зрителя и больше воздуха между событиями.',
-    noteEn: 'A theatre website redesign: repertoire, stage, visitor route, and more air between events.',
-    tags: ['redesign', 'culture', 'ux/ui'],
-    href: 'https://www.behance.net/6bb5c573',
-    mark: 'theatre / web',
+    text: 'Театральный сайт с афишей, сценой, маршрутом зрителя и большим воздухом между событиями.',
   },
 ]
 
 const services = [
-  ['UX/UI дизайн сайтов', 'Website UX/UI design'],
-  ['Лендинги и промо-страницы', 'Landing pages and promo pages'],
-  ['Посадка дизайна на Tilda', 'Tilda implementation'],
-  ['Редизайн без потери характера', 'Redesigns with character kept intact'],
-  ['AI-визуалы и визуальные концепции', 'AI visuals and visual concepts'],
+  'UX/UI дизайн сайтов',
+  'лендинги и промо-страницы',
+  'посадка дизайна на Tilda',
+  'редизайн',
+  'AI-визуалы',
 ]
 
 export default function Home() {
   return (
     <main className="site-shell">
-      <header className="nav">
-        <a href="#top" className="brand">Cool Beta Designer</a>
-        <nav aria-label="Main navigation">
-          <a href="#works">works</a>
-          <a href="#process">process</a>
-          <a href="#contact">contact</a>
+      <header className="topbar" aria-label="Навигация">
+        <a href="#top">KULBEDA</a>
+        <nav>
+          <a href="#works">проекты</a>
+          <a href="#services">услуги</a>
+          <a href="#contact">контакт</a>
         </nav>
-        <span>ru / en</span>
+        <span>web-design</span>
       </header>
 
-      <section id="top" className="hero">
+      <section id="top" className="hero poster-grid">
         <motion.div
-          className="hero-copy"
+          className="hero-title frame-cell"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease }}
+          transition={{ duration: 0.65, ease }}
         >
-          <p className="kicker">UX/UI designer / AI visuals / websites with a pulse</p>
-          <h1>
-            Cool Beta
-            <span>Designer</span>
-          </h1>
-          <p className="lead">
-            Я проектирую сайты, лендинги и цифровые миры на стыке структуры,
-            сторителлинга и визуального эксперимента.
-          </p>
-          <p className="lead lead-en">
-            I design websites, landing pages, and atmospheric digital worlds where
-            business logic meets a memorable visual voice.
-          </p>
-          <div className="hero-actions">
-            <a href="#contact" className="button">обсудить задачу</a>
-            <a href="#works" className="text-link">смотреть архив</a>
-          </div>
+          <span className="cell-label">designer / portfolio</span>
+          <h1>KULBEDA</h1>
+          <p>Web & presentation designer</p>
         </motion.div>
 
         <motion.div
-          className="portrait-collage"
-          initial={{ opacity: 0, rotate: -2, scale: 0.96 }}
-          animate={{ opacity: 1, rotate: 0, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.1, ease }}
-          aria-label="AI avatar placeholder"
+          className="hero-photo frame-cell"
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.08, ease }}
         >
-          <div className="portrait-card">
-            <span>AI avatar</span>
-            <strong>photo soon</strong>
-          </div>
-          <div className="tape tape-one">beta / not boring</div>
-          <div className="tape tape-two">структура + магия</div>
-          <div className="orbital orbital-one" />
-          <div className="orbital orbital-two" />
+          <Image
+            src="/assets/portrait.png"
+            alt="Портрет UX/UI дизайнера Анастасии Кульбеды"
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 42vw"
+          />
+          <div className="scan-corners" aria-hidden="true" />
         </motion.div>
-      </section>
 
-      <section className="manifest" aria-label="Manifest">
-        <motion.p
+        <motion.div
+          className="hero-brief frame-cell"
           initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7, ease }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.14, ease }}
         >
-          Мне интересно делать интерфейсы, у которых есть лицо: не шаблонный
-          экран, а маленькая вселенная, где владелец бизнеса узнает себя, а
-          HR видит не только навыки, но и способ мышления.
-        </motion.p>
-      </section>
-
-      <section id="works" className="works" aria-label="Selected works">
-        <div className="section-heading">
-          <h2>archive of worlds</h2>
-          <p>4 кейса с Behance / четыре разных настроения для бизнеса, культуры и продукта</p>
-        </div>
-
-        <div className="project-grid">
-          {projects.map((project, index) => (
-            <motion.a
-              key={project.title}
-              href={project.href}
-              target="_blank"
-              rel="noreferrer"
-              className="project-card"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.55, delay: index * 0.06, ease }}
-            >
-              <div className="project-image" aria-hidden="true">
-                <span>{project.mark}</span>
-              </div>
-              <div className="project-meta">
-                <span>{project.year}</span>
-                <span>{project.kind}</span>
-              </div>
-              <h3>{project.title}</h3>
-              <p>{project.noteRu}</p>
-              <p className="en">{project.noteEn}</p>
-              <div className="tags">
-                {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-            </motion.a>
-          ))}
-        </div>
-      </section>
-
-      <section className="services" aria-label="Services">
-        <div className="section-heading">
-          <h2>what I can build</h2>
-          <p>Для малого и среднего бизнеса, команд, которым нужен не просто макет, а точка притяжения.</p>
-        </div>
-        <div className="service-list">
-          {services.map(([ru, en], index) => (
-            <motion.div
-              className="service-row"
-              key={ru}
-              initial={{ opacity: 0, x: -18 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05, ease }}
-            >
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <strong>{ru}</strong>
-              <em>{en}</em>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section id="process" className="process" aria-label="Process">
-        <div className="process-note">
-          <h2>как работаю?</h2>
+          <span className="cell-label">профиль</span>
+          <h2>Делаю сайты с характером для малого бизнеса, команд и HR.</h2>
           <p>
-            Сначала ищу не красивый стиль, а точное ощущение: что человек должен
-            почувствовать, куда нажать, чему поверить. Потом собираю структуру,
-            прототип, визуальный язык, анимации и финальную посадку.
+            Проектирую структуру, визуальный язык, промо-страницы, Tilda-сайты,
+            редизайн и AI-визуалы. Мне важно, чтобы интерфейс не выглядел как
+            шаблон, а работал как узнаваемый цифровой плакат.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="hero-orbit frame-cell"
+          aria-hidden="true"
+          initial={{ opacity: 0, rotate: -10 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          transition={{ duration: 0.9, delay: 0.18, ease }}
+        >
+          <div className="orbit-lines" />
+          <span>//2026</span>
+        </motion.div>
+      </section>
+
+      <section className="identity-strip" aria-label="Краткая информация">
+        <div>
+          <span>// дизайнер</span>
+          <strong>Анастасия Кульбеда</strong>
+        </div>
+        <div>
+          <span>// роль</span>
+          <strong>Web & presentation designer</strong>
+        </div>
+        <div>
+          <span>// фокус</span>
+          <strong>сайты / лендинги / AI-визуалы</strong>
+        </div>
+      </section>
+
+      <section id="works" className="works poster-grid" aria-label="Проекты">
+        <div className="section-title frame-cell">
+          <span className="cell-label">архив работ</span>
+          <h2>проекты</h2>
+          <a href="https://www.behance.net/6bb5c573" target="_blank" rel="noreferrer">
+            смотреть Behance
+          </a>
+        </div>
+
+        {projects.map((project, index) => (
+          <motion.a
+            href="https://www.behance.net/6bb5c573"
+            target="_blank"
+            rel="noreferrer"
+            className="project-row frame-cell"
+            key={project.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.5, delay: index * 0.05, ease }}
+          >
+            <span>{project.id}</span>
+            <div>
+              <h3>{project.title}</h3>
+              <p>{project.text}</p>
+            </div>
+            <em>{project.type}</em>
+            <strong>{project.year}</strong>
+          </motion.a>
+        ))}
+      </section>
+
+      <section id="services" className="services poster-grid" aria-label="Услуги">
+        <div className="service-copy frame-cell">
+          <span className="cell-label">что можно заказать</span>
+          <h2>от идеи до живой страницы</h2>
+          <p>
+            Я собираю не просто красивый экран, а понятный маршрут: что человек
+            видит первым, как доверяет, куда нажимает и почему запоминает бренд.
           </p>
         </div>
-        <div className="process-steps">
-          <span>brief - mood - prototype - visual system - motion - handoff</span>
-          <span>задача - атмосфера - структура - дизайн - движение - запуск</span>
+        <div className="service-list frame-cell">
+          {services.map((service, index) => (
+            <div key={service}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <strong>{service}</strong>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section id="contact" className="contact" aria-label="Contact">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease }}
-        >
-          <p className="kicker">open for freelance / full-time</p>
-          <h2>если хочется сайта с характером - давайте обсудим задачу</h2>
-          <div className="contact-links">
-            <a href="https://t.me/Kulbeda_design" target="_blank" rel="noreferrer">Telegram</a>
-            <a href="mailto:email@example.com">email soon</a>
-            <a href="https://vk.com/" target="_blank" rel="noreferrer">VK soon</a>
-            <a href="https://www.behance.net/6bb5c573" target="_blank" rel="noreferrer">Behance</a>
-          </div>
-        </motion.div>
+      <section className="banner-panel frame-cell" aria-label="Бренд-баннер">
+        <Image
+          src="/assets/brand-banner.png"
+          alt="Баннер Kulbeda Web and Presentation Designer"
+          fill
+          sizes="100vw"
+        />
+      </section>
+
+      <section id="contact" className="contact poster-grid" aria-label="Контакты">
+        <div className="contact-title frame-cell">
+          <span className="cell-label">open for freelance / full-time</span>
+          <h2>если нужен сайт с характером — давайте обсудим задачу</h2>
+        </div>
+        <div className="contact-links frame-cell">
+          <a href="https://t.me/Kulbeda_design" target="_blank" rel="noreferrer">Telegram</a>
+          <a href="mailto:email@example.com">email soon</a>
+          <a href="https://vk.com/" target="_blank" rel="noreferrer">VK soon</a>
+          <a href="https://www.behance.net/6bb5c573" target="_blank" rel="noreferrer">Behance</a>
+        </div>
       </section>
     </main>
   )
