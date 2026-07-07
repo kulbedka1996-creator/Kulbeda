@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { TechCursor } from './TechCursor'
 
 export const metadata: Metadata = {
   title: 'KULBEDA | Web & Presentation Designer',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        <TechCursor />
+        {children}
+      </body>
     </html>
   )
 }
