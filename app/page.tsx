@@ -223,7 +223,7 @@ export default function Home() {
       <section id="contact" className="contact poster-grid" aria-label="Контакты">
         <div className="contact-title frame-cell">
           <span className="cell-label">open for freelance / full-time</span>
-          <h2>если нужен сайт с характером — давайте обсудим задачу</h2>
+          <h2>если нужен сайт с характером, давайте обсудим задачу</h2>
         </div>
         <div className="contact-links frame-cell">
           <a href="https://t.me/Kulbeda_design" target="_blank" rel="noreferrer">Telegram</a>
