@@ -364,12 +364,13 @@ a {
 
 .hero-person {
   position: absolute;
-  right: clamp(20px, 7vw, 120px);
-  bottom: -10px;
+  left: 50%;
+  bottom: -42px;
   z-index: 4;
-  width: min(68vw, 1120px);
-  height: min(76vh, 760px);
+  width: min(78vw, 1320px);
+  height: min(88vh, 880px);
   pointer-events: none;
+  translate: -20% 0;
 }
 
 .hero-person img {
@@ -452,19 +453,19 @@ a {
 }
 
 .hero-pill--ux {
-  top: 43%;
-  left: 36%;
+  top: 41%;
+  left: 35%;
 }
 
 .hero-pill--landing {
-  right: 7.5%;
-  top: 53%;
+  right: 10.5%;
+  top: 51%;
   animation-delay: 0.4s;
 }
 
 .hero-pill--presentation {
-  right: 28%;
-  bottom: 15%;
+  right: 31%;
+  bottom: 13%;
   animation-delay: 0.8s;
 }
 
@@ -475,8 +476,8 @@ a {
 }
 
 .hero-pill--web {
-  left: 16%;
-  bottom: 3.5%;
+  left: 17%;
+  bottom: 3.2%;
   animation-delay: 0.2s;
 }
 
@@ -857,10 +858,12 @@ a {
   }
 
   .hero-person {
-    right: -22%;
-    bottom: 40px;
-    width: 126vw;
-    height: 610px;
+    left: 50%;
+    right: auto;
+    bottom: 34px;
+    width: 140vw;
+    height: 680px;
+    translate: -38% 0;
   }
 
   .hero-info-card {
@@ -888,7 +891,7 @@ a {
 
   .hero-pill--ux {
     top: 34%;
-    left: 48%;
+    left: 43%;
   }
 
   .hero-pill--landing {
@@ -897,8 +900,8 @@ a {
   }
 
   .hero-pill--presentation {
-    right: 16%;
-    bottom: 20%;
+    right: 12%;
+    bottom: 19%;
   }
 
   .hero-pill--ai {
@@ -985,10 +988,12 @@ a {
   }
 
   .hero-person {
-    right: -38%;
-    bottom: 82px;
-    width: 150vw;
-    height: 520px;
+    left: 50%;
+    right: auto;
+    bottom: 92px;
+    width: 170vw;
+    height: 560px;
+    translate: -42% 0;
   }
 
   .hero-info-card {
