@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -72,43 +72,81 @@ export default function Home() {
         <span>web-design</span>
       </header>
 
-      <section id="top" className="hero poster-grid">
-        <motion.div
-          className="hero-title frame-cell"
-          initial={{ opacity: 0, y: 24 }}
+      <section id="top" className="hero hero-reference poster-grid">
+        <motion.h1
+          className="hero-word"
+          initial={{ opacity: 0, y: -28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease }}
+          transition={{ duration: 0.7, ease }}
         >
-          <span className="cell-label">designer / portfolio</span>
-          <h1>Делаю сайты и презентации.</h1>
-          <p>
-            Я Анастасия Кульбеда, web & presentation designer. Собираю
-            выразительные страницы, лендинги, презентации и AI-визуалы для
-            проектов, которым нужен характер.
-          </p>
-          <div className="hero-actions">
-            <a href="#works">смотреть проекты</a>
-            <a href="#contact">обсудить задачу</a>
-          </div>
-        </motion.div>
+          KULBEDA
+        </motion.h1>
+
+        <motion.p
+          className="hero-subtitle"
+          initial={{ opacity: 0, x: -24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.65, delay: 0.1, ease }}
+        >
+          Web &<br />
+          Presentation<br />
+          Designer
+        </motion.p>
 
         <motion.div
-          className="hero-photo frame-cell"
-          initial={{ opacity: 0, scale: 0.985 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.08, ease }}
+          className="hero-person"
+          initial={{ opacity: 0, scale: 0.96, y: 28 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.85, delay: 0.12, ease }}
         >
           <Image
-            src="/assets/portrait.png"
+            src="/assets/portrait-cutout.png"
             alt="Портрет Анастасии Кульбеды"
             fill
             priority
-            sizes="(max-width: 900px) 100vw, 54vw"
+            sizes="(max-width: 900px) 118vw, 66vw"
           />
-          <div className="scan-corners" aria-hidden="true" />
         </motion.div>
-      </section>
 
+        <motion.div
+          className="hero-info-card"
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.18, ease }}
+        >
+          <p>
+            Сайты,<br />
+            лендинги,<br />
+            презентации<br />
+            и AI-визуалы.
+          </p>
+          <div className="hero-info-mark" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+        </motion.div>
+
+        <span className="hero-pill hero-pill--ux"><i />UX/UI</span>
+        <span className="hero-pill hero-pill--landing"><i />Лендинги</span>
+        <span className="hero-pill hero-pill--presentation"><i />Презентации</span>
+        <span className="hero-pill hero-pill--ai"><i />AI Content</span>
+        <span className="hero-pill hero-pill--web"><i />Web Design</span>
+
+        <aside className="hero-rail" aria-hidden="true">
+          <strong>F</strong>
+          <span>Ps</span>
+          <span>Ae</span>
+          <span>AI</span>
+        </aside>
+
+        <div className="hero-deco hero-deco--hatch" aria-hidden="true" />
+        <div className="hero-deco hero-deco--rings" aria-hidden="true" />
+        <div className="hero-footnote" aria-hidden="true">
+          KULBEDA / PORTFOLIO <span />
+        </div>
+      </section>
       <section className="identity-strip" aria-label="Краткая информация">
         <div>
           <span>// дизайнер</span>
@@ -197,3 +235,4 @@ export default function Home() {
     </main>
   )
 }
+
