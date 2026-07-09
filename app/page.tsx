@@ -11,6 +11,8 @@ const projects = [
     title: 'OFFtrail',
     type: 'промо-лендинг',
     year: '2026',
+    href: 'https://www.behance.net/gallery/246960855/OFFtrail-Promo-Landing-Page',
+    cover: '/assets/offtrail-cover.png',
     text: 'Маршрутный лендинг для продукта, которому нужно ощущение движения, свободы и точной структуры.',
   },
   {
@@ -18,6 +20,8 @@ const projects = [
     title: 'Noxi AI',
     type: 'app concept',
     year: '2025',
+    href: 'https://www.behance.net/gallery/246233843/Noxi-AI-Sleep-Calm-App-Concept',
+    cover: '/assets/noxi-cover.png',
     text: 'Спокойный интерфейс для сна и восстановления: мягкий AI, понятная логика и тихий визуальный язык.',
   },
   {
@@ -25,6 +29,8 @@ const projects = [
     title: 'STEREO ROOM',
     type: 'e-commerce',
     year: '2025',
+    href: 'https://www.behance.net/gallery/244896173/STEREO-ROOM-online-vinyl-store',
+    cover: '/assets/stereo-cover.png',
     text: 'Онлайн-магазин винила, где пластинки выбираются не только фильтрами, но и состоянием.',
   },
   {
@@ -32,6 +38,8 @@ const projects = [
     title: 'Tripandplay Theatre',
     type: 'редизайн сайта',
     year: '2026',
+    href: 'https://www.behance.net/gallery/248147893/Tripandplay-Theatre-Website-Redesign',
+    cover: '/assets/tripandplay-cover.png',
     text: 'Театральный сайт с афишей, сценой, маршрутом зрителя и большим воздухом между событиями.',
   },
 ]
@@ -173,7 +181,7 @@ export default function Home() {
 
         {projects.map((project, index) => (
           <motion.a
-            href="https://www.behance.net/6bb5c573"
+            href={project.href}
             target="_blank"
             rel="noreferrer"
             className="project-row frame-cell"
@@ -190,6 +198,9 @@ export default function Home() {
             </div>
             <em>{project.type}</em>
             <strong>{project.year}</strong>
+            <span className="project-cover" aria-hidden="true">
+              <Image src={project.cover} alt="" fill sizes="420px" />
+            </span>
           </motion.a>
         ))}
       </section>
