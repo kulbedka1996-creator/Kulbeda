@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --blue: #1f24b8;
-  --blue-hot: #1767ff;
-  --paper: #f4f5ff;
-  --white: #f7f7ff;
-  --cyan: #6dfff2;
-  --ink: #070a24;
-  --line: rgba(247, 247, 255, 0.92);
-  --line-soft: rgba(247, 247, 255, 0.28);
+  --blue: #1818b8;
+  --blue-hot: #2424ff;
+  --paper: #e8eaf5;
+  --white: #ffffff;
+  --cyan: #dbff2f;
+  --red: #ff6330;
+  --ink: #050511;
+  --line: rgba(255, 255, 255, 0.92);
+  --line-soft: rgba(255, 255, 255, 0.28);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -52,12 +53,7 @@ a {
 
 .site-shell {
   min-height: 100vh;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    radial-gradient(circle at 80% 4%, rgba(109, 255, 242, 0.18), transparent 24rem),
-    var(--blue);
-  background-size: 36px 36px, 36px 36px, auto, auto;
+  background: var(--blue);
   overflow-x: hidden;
 }
 
@@ -131,7 +127,7 @@ a {
   width: 56px;
   height: 56px;
   border-color: var(--cyan);
-  background: rgba(109, 255, 242, 0.18);
+  background: rgba(219, 255, 47, 0.2);
 }
 
 .tech-cursor.is-active .tech-cursor__axis {
@@ -147,7 +143,7 @@ a {
   align-items: center;
   gap: 24px;
   padding: 22px clamp(16px, 4vw, 48px);
-  background: rgba(31, 36, 184, 0.84);
+  background: rgba(24, 24, 184, 0.9);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
@@ -328,12 +324,11 @@ a {
   padding: clamp(24px, 2.4vw, 42px);
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-    radial-gradient(circle at 54% 46%, rgba(255, 255, 255, 0.36), transparent 8rem),
-    radial-gradient(circle at 60% 56%, rgba(0, 214, 255, 0.58), transparent 22rem),
-    #0617d7;
-  background-size: 76px 76px, 76px 76px, auto, auto, auto;
+    radial-gradient(circle at 54% 45%, rgba(255, 255, 255, 0.28), transparent 9rem),
+    radial-gradient(circle at 60% 58%, rgba(219, 255, 47, 0.22), transparent 20rem),
+    radial-gradient(circle at 74% 62%, rgba(255, 99, 48, 0.18), transparent 18rem),
+    var(--blue);
+  background-size: auto;
   isolation: isolate;
 }
 
@@ -391,7 +386,7 @@ a {
   grid-template-columns: minmax(280px, 1fr) 164px;
   width: min(47vw, 650px);
   min-height: 245px;
-  background: var(--white);
+  background: var(--paper);
   color: var(--blue);
   border: 1px solid var(--line);
 }
@@ -414,7 +409,7 @@ a {
   border-left: 1px solid var(--blue);
   background:
     repeating-linear-gradient(0deg, transparent 0 16px, rgba(31, 36, 184, 0.72) 17px 18px),
-    var(--white);
+    var(--paper);
 }
 
 .hero-info-mark span {
@@ -434,7 +429,7 @@ a {
   padding: 0 25px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(6, 23, 215, 0.54);
+  background: rgba(5, 5, 17, 0.38);
   box-shadow: 0 16px 48px rgba(0, 0, 90, 0.22);
   color: var(--white);
   font-size: clamp(18px, 1.7vw, 30px);
@@ -448,7 +443,7 @@ a {
 .hero-pill i {
   width: 18px;
   height: 18px;
-  background: var(--white);
+  background: var(--cyan);
   border-radius: 50%;
 }
 
@@ -662,7 +657,7 @@ a {
 }
 
 .project-row:hover {
-  background: var(--white);
+  background: var(--paper);
   color: var(--blue);
 }
 
@@ -745,8 +740,8 @@ a {
   min-height: 360px;
   padding: clamp(22px, 4vw, 54px);
   background:
-    radial-gradient(circle at 88% 16%, rgba(109, 255, 242, 0.22), transparent 18rem),
-    rgba(255, 255, 255, 0.035);
+    radial-gradient(circle at 88% 16%, rgba(219, 255, 47, 0.2), transparent 18rem),
+    rgba(5, 5, 17, 0.2);
 }
 
 .services-head h2 {
@@ -797,10 +792,10 @@ a {
 
 .service-board h3 {
   margin: 0 0 18px;
-  font-size: clamp(20px, 2.15vw, 34px);
+  font-size: clamp(17px, 1.55vw, 25px);
   font-weight: 1000;
-  letter-spacing: -0.02em;
-  line-height: 1.04;
+  letter-spacing: 0;
+  line-height: 1.12;
   text-transform: uppercase;
   text-wrap: balance;
 }
