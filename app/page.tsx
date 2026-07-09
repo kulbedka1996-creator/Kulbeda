@@ -13,25 +13,25 @@ const projects = [
     year: '2026',
     href: 'https://www.behance.net/gallery/246960855/OFFtrail-Promo-Landing-Page',
     cover: '/assets/offtrail-cover.png',
-    text: 'Маршрутный лендинг для продукта, которому нужно ощущение движения, свободы и точной структуры.',
+    text: 'Маршрутный лендинг для продукта, которому нужно ощущение движения, свободы и точной структуры.',
   },
   {
     id: '002',
     title: 'Noxi AI',
     type: 'app concept',
-    year: '2025',
+    year: '2026',
     href: 'https://www.behance.net/gallery/246233843/Noxi-AI-Sleep-Calm-App-Concept',
     cover: '/assets/noxi-cover.png',
-    text: 'Спокойный интерфейс для сна и восстановления: мягкий AI, понятная логика и тихий визуальный язык.',
+    text: 'Спокойный интерфейс для сна и восстановления: мягкий AI, понятная логика и тихий визуальный язык.',
   },
   {
     id: '003',
     title: 'STEREO ROOM',
     type: 'e-commerce',
-    year: '2025',
+    year: '2026',
     href: 'https://www.behance.net/gallery/244896173/STEREO-ROOM-online-vinyl-store',
     cover: '/assets/stereo-cover.png',
-    text: 'Онлайн-магазин винила, где пластинки выбираются не только фильтрами, но и состоянием.',
+    text: 'Онлайн-магазин винила, где пластинки выбираются не только фильтрами, но и состоянием.',
   },
   {
     id: '004',
@@ -40,30 +40,30 @@ const projects = [
     year: '2026',
     href: 'https://www.behance.net/gallery/248147893/Tripandplay-Theatre-Website-Redesign',
     cover: '/assets/tripandplay-cover.png',
-    text: 'Театральный сайт с афишей, сценой, маршрутом зрителя и большим воздухом между событиями.',
+    text: 'Театральный сайт с афишей, сценой, маршрутом зрителя и большим воздухом между событиями.',
   },
 ]
 
 const services = [
   {
     title: 'Сайт',
-    text: 'Структура, визуальный язык, адаптив и понятный путь пользователя.',
+    text: 'Структура, визуальный язык, адаптив и понятный путь пользователя.',
   },
   {
     title: 'Лендинг',
-    text: 'Промо-страница, которая быстро объясняет идею и ведет к действию.',
+    text: 'Промо-страница, которая быстро объясняет идею и ведет к действию.',
   },
   {
     title: 'Презентация',
-    text: 'Слайды для продукта, питча, выступления или визуальной упаковки проекта.',
+    text: 'Слайды для продукта, питча, выступления или визуальной упаковки проекта.',
   },
   {
     title: 'Tilda',
-    text: 'Аккуратная посадка дизайна, настройка блоков, анимаций и публикации.',
+    text: 'Аккуратная посадка дизайна, настройка блоков, анимаций и публикации.',
   },
   {
     title: 'AI-визуалы',
-    text: 'Изображения, обложки и атмосферные материалы под стиль проекта.',
+    text: 'Изображения, обложки и атмосферные материалы под стиль проекта.',
   },
 ]
 
@@ -71,13 +71,17 @@ export default function Home() {
   return (
     <main className="site-shell">
       <header className="topbar" aria-label="Навигация">
-        <a href="#top">KULBEDA</a>
+        <a className="brand-link" href="#top" aria-label="KULBEDA">
+          <span className="brand-mark" aria-hidden="true"><i /><i /><i /><i /></span>
+          <span>KULBEDA</span>
+        </a>
         <nav>
           <a href="#works">проекты</a>
           <a href="#services">услуги</a>
+          <a href="#top">обо мне</a>
           <a href="#contact">контакт</a>
         </nav>
-        <span>web-design</span>
+        <a className="topbar-pill" href="#contact">web-design <i /></a>
       </header>
 
       <section id="top" className="hero hero-reference poster-grid">
@@ -89,17 +93,6 @@ export default function Home() {
         >
           KULBEDA
         </motion.h1>
-
-        <motion.p
-          className="hero-subtitle"
-          initial={{ opacity: 0, x: -24 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.65, delay: 0.1, ease }}
-        >
-          Web &<br />
-          Presentation<br />
-          Designer
-        </motion.p>
 
         <motion.div
           className="hero-person"
@@ -117,23 +110,23 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="hero-info-card"
+          className="hero-card"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.18, ease }}
         >
-          <p>
+          <span className="hero-card-kicker"><i />я создаю</span>
+          <h2>
             Сайты,<br />
             лендинги,<br />
             презентации<br />
-            и AI-визуалы.
-          </p>
-          <div className="hero-info-mark" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
+            и AI-визуалы<span>.</span>
+          </h2>
+          <p>Дизайн, который работает на цели и выглядит эффектно.</p>
+          <a href="#works" className="hero-card-action">
+            смотреть проекты
+            <span aria-hidden="true">→</span>
+          </a>
         </motion.div>
 
         <span className="hero-pill hero-pill--ux"><i />UX/UI</span>
@@ -144,9 +137,9 @@ export default function Home() {
 
         <aside className="hero-rail" aria-hidden="true">
           <strong>F</strong>
-          <span>Ps</span>
-          <span>Ae</span>
-          <span>AI</span>
+          <span><b>Ps</b><small>photoshop</small></span>
+          <span><b>Ae</b><small>after effects</small></span>
+          <span><b>Ai</b><small>illustrator</small></span>
         </aside>
 
         <div className="hero-deco hero-deco--hatch" aria-hidden="true" />
@@ -197,7 +190,7 @@ export default function Home() {
           <h2>форматы работы</h2>
           <p>
             Не делаю одинаковые карточки “под копирку”. Сначала разбираю задачу,
-            затем собираю структуру, визуальный ритм и понятную точку действия.
+            затем собираю структуру, визуальный ритм и понятную точку действия.
           </p>
         </div>
         <div className="service-board frame-cell">
@@ -220,7 +213,7 @@ export default function Home() {
       <section id="contact" className="contact poster-grid" aria-label="Контакты">
         <div className="contact-title frame-cell">
           <span className="cell-label">open for freelance / full-time</span>
-          <h2>если нужен сайт с характером, давайте обсудим задачу</h2>
+          <h2>если нужен сайт с характером, давайте обсудим задачу</h2>
         </div>
         <div className="contact-links frame-cell">
           <a href="https://t.me/Kulbeda_design" target="_blank" rel="noreferrer">Telegram</a>
