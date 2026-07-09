@@ -155,20 +155,6 @@ export default function Home() {
           KULBEDA / PORTFOLIO <span />
         </div>
       </section>
-      <section className="identity-strip" aria-label="Краткая информация">
-        <div>
-          <span>// дизайнер</span>
-          <strong>Анастасия Кульбеда</strong>
-        </div>
-        <div>
-          <span>// роль</span>
-          <strong>Web & presentation designer</strong>
-        </div>
-        <div>
-          <span>// фокус</span>
-          <strong>сайты / презентации / AI-визуалы</strong>
-        </div>
-      </section>
 
       <section id="works" className="works poster-grid" aria-label="Проекты">
         <div className="section-title frame-cell">
